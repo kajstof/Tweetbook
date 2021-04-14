@@ -46,8 +46,8 @@ namespace Tweetbook
                 app.UseHsts();
             }
 
-            var swaggerOptions = new SwaggerOptions();
-            Configuration.GetSection(nameof(SwaggerOptions)).Bind(swaggerOptions);
+            var swaggerOptions = new SwaggerSettings();
+            Configuration.GetSection(nameof(SwaggerSettings)).Bind(swaggerOptions);
 
             app.UseSwagger(option => { option.RouteTemplate = swaggerOptions.JsonRoute; });
             app.UseSwaggerUI(option =>
@@ -60,7 +60,7 @@ namespace Tweetbook
 
             app.UseRouting();
 
-            // app.UseAuthentication();
+            app.UseAuthentication();
             // app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
