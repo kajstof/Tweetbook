@@ -1,0 +1,7 @@
+﻿### GET Posts
+GET {{host}}/posts
+Authorization: bearer {{token}}
+
+### Get Post
+GET {{host}}/posts/6333bf10-5200-41cb-92fa-bc9df9673da7
+Authorization: bearer {{token}}
